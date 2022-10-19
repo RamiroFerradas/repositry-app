@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "rate-repository-app_",
+    "slug": "rate-repository-app_",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
