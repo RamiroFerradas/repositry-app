@@ -7,37 +7,18 @@ import {
   Alert,
   TouchableNativeFeedback,
 } from "react-native";
-import StyledText from "./StyledText";
+import RepositoryStats from "./RepositoryStats";
+import StyledText from "./Styles/StyledText";
 
 export default function RepositoryItem(repo) {
   return (
     <View key={repo.id} style={styles.container}>
-      <Button
-        onPress={() => {
-          alert("holaaa");
-        }}
-        title="Press Me"
-      />
-      <TouchableNativeFeedback
-        onPress={() => {
-          alert("holaaa");
-        }}
-        style={{ cursor: "pointer" }}
-      >
-        <StyledText big bold>
-          HOLA MUNDO
-        </StyledText>
-      </TouchableNativeFeedback>
-      <StyledText big bold>
-        id: {repo.id}
+      <StyledText fontSize="subheading" fontWeight="bold">
+        {repo.fullName}
       </StyledText>
-      <StyledText blue>FullName: {repo.fullName}</StyledText>
-      <StyledText blue>Description: {repo.description}</StyledText>
-
-      <StyledText blue>Languaje: {repo.language}</StyledText>
-      <StyledText small>Stars: {repo.stargazersCount}</StyledText>
-      <StyledText small>Forks: {repo.forksCount}</StyledText>
-      <StyledText small>Rating: {repo.ratingAverage}</StyledText>
+      <StyledText>Description: {repo.description}</StyledText>
+      <StyledText>Languaje: {repo.language}</StyledText>
+      <RepositoryStats {...repo} />
     </View>
   );
 }
