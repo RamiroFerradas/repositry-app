@@ -2,7 +2,7 @@ import React from "react";
 import { Text, StyleSheet } from "react-native";
 import theme from "./Theme";
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   text: {
     color: theme.colors.textPrimary,
     fontSize: theme.fontSizes.body,
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     fontWeight: theme.fontWeights.normal,
   },
   colorPrimary: {
-    fontWeight: theme.colors.primary,
+    color: theme.colors.primary,
   },
   colorSecondary: {
     color: theme.colors.textSecondary,
@@ -27,7 +27,21 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     paddingBottom: 5,
-    paddingTop: 5,
+    paddingTop: 25,
+  },
+  languaje: {
+    padding: 4,
+    color: theme.colors.white,
+    backgroundColor: theme.colors.primary,
+    alignSelf: "flex-start",
+    marginVertical: 4,
+    borderRadius: 4,
+    overflow: "hidden",
+  },
+  image: {
+    width: 48,
+    height: 48,
+    borderRadius: 4,
   },
 });
 
@@ -36,15 +50,15 @@ export default function StyledText({
   color,
   fontSize,
   fontWeight,
-  style,
   align,
+  style,
   ...restOfProps
 }) {
   const textStyles = [
     styles.text,
     align === "center" && styles.textAlignCenter,
     color === "primary" && styles.colorPrimary,
-    color === "secundary" && styles.colorSecondary,
+    color === "secondary" && styles.colorSecondary,
     fontSize === "subheading" && styles.subheading,
     fontWeight === "bold" && styles.bold,
     style,
