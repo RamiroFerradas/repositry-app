@@ -1,11 +1,12 @@
 import React from "react";
 import { View } from "react-native";
+import AppBar from "../Repositories/AppBar";
 import RepositoryList from "../Repositories/RepositoryList";
-import StyledText from "../Repositories/Styles/StyledText";
 
 const Main = () => {
   return (
-    <View>
+    <View style={{ flexGrow: 1 }}>
+      <AppBar />
       <RepositoryList />
     </View>
   );

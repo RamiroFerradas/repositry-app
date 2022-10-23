@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, StyleSheet } from "react-native";
 import theme from "./Theme";
+import Constants from "expo-constants";
 
 export const styles = StyleSheet.create({
   text: {
@@ -26,8 +27,7 @@ export const styles = StyleSheet.create({
   },
   container: {
     padding: 20,
-    paddingBottom: 5,
-    paddingTop: 25,
+    paddingVertical: 5,
   },
   languaje: {
     padding: 4,
@@ -42,6 +42,17 @@ export const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 4,
+  },
+  appBar: {
+    container: {
+      backgroundColor: theme.appBar.primary,
+      paddingTop: Constants.statusBarHeight + 10,
+      paddingBottom: 10,
+      paddingLeft: 10,
+    },
+    text: {
+      color: theme.appBar.textPrimary,
+    },
   },
 });
 
