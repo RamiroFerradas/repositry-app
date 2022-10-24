@@ -48,9 +48,14 @@ export const styles = StyleSheet.create({
       backgroundColor: theme.appBar.primary,
       paddingTop: Constants.statusBarHeight + 10,
       paddingBottom: 10,
-      paddingLeft: 10,
+      flexDirection: "row",
     },
     text: {
+      color: theme.appBar.textSecondary,
+      paddingHorizontal: 10,
+    },
+    scroll: { paddingBottom: 10 },
+    active: {
       color: theme.appBar.textPrimary,
     },
   },
