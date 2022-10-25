@@ -22,7 +22,7 @@ export default function AppBar() {
     <View style={styles.appBar.container}>
       <ScrollView horizontal style={styles.appBar.scroll}>
         <AppBarTab to="/">Repositories</AppBarTab>
-        <AppBarTab to="/signin">Sign In</AppBarTab>
+        <AppBarTab to="/singin">Sign In</AppBarTab>
       </ScrollView>
     </View>
   );

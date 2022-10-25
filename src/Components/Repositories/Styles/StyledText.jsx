@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, Platform } from "react-native";
 import theme from "./Theme";
 import Constants from "expo-constants";
 
@@ -32,7 +32,11 @@ export const styles = StyleSheet.create({
   languaje: {
     padding: 4,
     color: theme.colors.white,
-    backgroundColor: theme.colors.primary,
+    backgroundColor: Platform.select({
+      android: theme.colors.primary,
+      ios: "orange",
+      default: "purple",
+    }),
     alignSelf: "flex-start",
     marginVertical: 4,
     borderRadius: 4,
