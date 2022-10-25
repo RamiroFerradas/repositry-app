@@ -3,7 +3,7 @@ import React from "react";
 import { Button, Text, StyleSheet, View } from "react-native";
 import StyledText, { styles } from "../Repositories/Styles/StyledText";
 import StyledTextInput from "../Repositories/Styles/StyledTextinput";
-// import Validate from "./Validate";
+import { LoginValidation } from "./ValidationSchema";
 
 export default function LoginPage() {
   const initialValues = {
@@ -19,24 +19,13 @@ export default function LoginPage() {
     error: { color: "red" },
   });
 
-  const Validate = (input) => {
-    const errors = {};
-
-    if (!input.email) {
-      errors.email = "Email requerido";
-    } else if (!/^\S+@\S+\.\S+$/.test(input.email)) {
-      errors.email = "Email invalido";
-    }
-    // console.log(errors);
-    return errors;
-  };
-
   const FormikInputValue = ({ name, ...props }) => {
     const [field, meta, helpers] = useField(name);
-    console.log(meta.error);
+
     return (
       <>
         <StyledTextInput
+          error={meta.error}
           value={field.value}
           onChangeText={(value) => helpers.setValue(value)}
           {...props}
@@ -51,7 +40,7 @@ export default function LoginPage() {
   return (
     <View>
       <Formik
-        validate={Validate}
+        validationSchema={LoginValidation}
         initialValues={initialValues}
         onSubmit={(values) => console.log(values)}
       >
