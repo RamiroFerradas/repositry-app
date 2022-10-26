@@ -9,7 +9,7 @@ export default function useFetchRepositories() {
         "http://192.168.0.160:5000/api/repositories"
       );
       const json = await response.json();
-      setRepositories(await json);
+      setRepositories(json);
     } catch (error) {
       console.error(error);
       Alert.alert("Lost conexion");

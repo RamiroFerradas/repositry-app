@@ -6,6 +6,10 @@ import RepositoryItem from "./RepositoryItem";
 
 export default function RepositoryList() {
   const { repositoriesNode } = useFetchRepositories();
+
+  if (!repositoriesNode.length) {
+    return <Text>CARGANDO...</Text>;
+  }
   return (
     <FlatList
       data={repositoriesNode}
